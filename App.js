@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 let pic = {
   uri: 'https://res.cloudinary.com/wheelchimp/image/upload/v1518503938/nz7vzot8xzmxgajn0pur.jpg'
@@ -11,10 +12,17 @@ let data = {
 }
 
 export default class App extends React.Component {
+  onPress = () => {
+    this.setState({
+      count: this.state.count+1
+    })
+  }
+
   render() {
     return (
       <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.contentContainer}>
+
         <View style={{
           justifyContent: 'center',
           alignItems: 'center',
@@ -31,8 +39,10 @@ export default class App extends React.Component {
           {data.description}
         </Text>
 
+        <TouchableOpacity onPress={this.onPress}>
+          <Icon name="email" size={30} color="black" />
+        </TouchableOpacity>
 
-        
       </ScrollView>
         
       </View>
