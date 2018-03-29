@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity, Dimensions } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 let pic = {
@@ -19,6 +19,10 @@ export default class App extends React.Component {
   }
 
   render() {
+    const dimensions = Dimensions.get('window');
+    const imageHeight = Math.round(dimensions.width * 9 / 16);
+    const imageWidth = dimensions.width;
+
     return (
       <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.contentContainer}>
@@ -28,8 +32,16 @@ export default class App extends React.Component {
           alignItems: 'center',
           marginTop: 20
         }}>
-          <Image source={pic} style={{width: 193, height: 110}}/>
+          <Image source={pic} style={{width: imageWidth, height: imageHeight}}/>
         </View>
+
+        <TouchableOpacity onPress={this.onPress}>
+          <Icon name="email" size={30} color="black" />
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={this.onPress}>
+          <Icon name="favorite" size={30} color="black" />
+        </TouchableOpacity>
 
         <Text style={{fontWeight: 'bold'}}>
           {data.title}
@@ -39,9 +51,7 @@ export default class App extends React.Component {
           {data.description}
         </Text>
 
-        <TouchableOpacity onPress={this.onPress}>
-          <Icon name="email" size={30} color="black" />
-        </TouchableOpacity>
+        
 
       </ScrollView>
         
