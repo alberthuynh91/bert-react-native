@@ -1,6 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import Carousel from './Components/Carousel'
 
 const images = [
   {
@@ -19,33 +20,7 @@ let data = {
   description: 'Brand/Model: Work Equip -Bolt Pattern: 5x114.3 -Front: 18x9.5+20 -Rear: 18x10.5+20 -Face: Chrome (original from work) -Price: $2600 NO TRADE NO TRADE -Contact: 626 551 132 ZERO **Gold hardware available for additional cost** **Want a different lug pattern? can also redrill these** See original listing here: http://zilvia.net/f/showthread.php?t=647958'
 }
 
-const dimensions = Dimensions.get('window');
-const { width } = Dimensions.get('window');
-const height = dimensions.width * 0.8;
-const imageHeight = Math.round(dimensions.width * 9 / 16);
-const imageWidth = dimensions.width;
-
 export default class App extends React.Component {
-
-  getCarousel = () => {
-    if (images && images.length) {
-      return (
-        <View
-          style={styles.scrollContainer}
-        >
-          <ScrollView
-            horizontal
-            pagingEnabled
-            showsHorizontalScrollIndicator={false}
-          >
-            {images.map(image => (
-              <Image style={styles.image} source={image} />
-            ))}
-          </ScrollView>
-        </View>
-      );
-    }
-  }
 
   onPress = () => {
     this.setState({
@@ -67,7 +42,7 @@ export default class App extends React.Component {
           alignItems: 'center',
           marginTop: 20
         }}>
-          {this.getCarousel()}
+          <Carousel images={images}/> 
         </View>
 
         <View style={styles.touchContainer}>
@@ -121,12 +96,5 @@ const styles = StyleSheet.create({
     paddingTop: 15,
     paddingBottom: 15,
     paddingLeft: 23,
-  },
-  scrollContainer: {
-    height,
-  },
-  image: {
-    width,
-    height,
   }
 });
