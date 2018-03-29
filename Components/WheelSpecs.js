@@ -6,16 +6,12 @@ const height = width * 0.8;
 
 export default class WheelSpecs extends Component {
   render() {
-    const { images } = this.props;
-    if (images && images.length) {
     return (
         <View
         style={styles.scrollContainer}
         >
         </View>
-   
-    );
-    }
+    )
   }
 }
 
