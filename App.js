@@ -35,23 +35,23 @@ export default class App extends React.Component {
           <Image source={pic} style={{width: imageWidth, height: imageHeight}}/>
         </View>
 
-        <TouchableOpacity onPress={this.onPress}>
-          <Icon name="email" size={30} color="black" />
-        </TouchableOpacity>
+        <View style={styles.touchContainer}>
+          <TouchableOpacity onPress={this.onPress}>
+            <Icon name="email" size={30} color="black" style={styles.icons}/>
+          </TouchableOpacity>
 
-        <TouchableOpacity onPress={this.onPress}>
-          <Icon name="favorite" size={30} color="black" />
-        </TouchableOpacity>
+          <TouchableOpacity onPress={this.onPress}>
+            <Icon name="favorite" size={30} color="black" style={styles.icons}/>
+          </TouchableOpacity>
+        </View>
 
-        <Text style={{fontWeight: 'bold'}}>
+        <Text style={styles.title}>
           {data.title}
         </Text>
 
-        <Text style={{marginTop: 20}}>
+        <Text style={styles.description}>
           {data.description}
         </Text>
-
-        
 
       </ScrollView>
         
@@ -69,5 +69,22 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     paddingVertical: 20
+  },
+  touchContainer: {
+    flex: 1,
+    flexDirection: 'row',
+  },
+  title: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    textAlign: 'center'
+  },
+  description: {
+    marginTop: 20
+  },
+  icons: {
+    paddingTop: 15,
+    paddingBottom: 15,
+    paddingLeft: 23,
   }
 });
