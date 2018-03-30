@@ -60,17 +60,18 @@ export default class App extends React.Component {
           </TouchableOpacity>
         </View>
 
-        <View>
-          <WheelSpecs data={wheelData} />
-        </View>
-
         <Text style={styles.title}>
           {data.title}
         </Text>
 
-        <Text style={styles.description}>
-          {data.description}
-        </Text>
+        <View>
+          <WheelSpecs data={wheelData} />
+        </View>
+
+        <View style={styles.description}>
+          <Text style={{fontWeight: 'bold', marginBottom: 5}}>Description</Text>
+          <Text>{data.description}</Text>
+        </View>
 
       </ScrollView>
         
@@ -91,15 +92,18 @@ const styles = StyleSheet.create({
   },
   touchContainer: {
     flex: 1,
-    flexDirection: 'row',
+    flexDirection: 'row'
   },
   title: {
     fontSize: 20,
     fontWeight: 'bold',
-    textAlign: 'center'
+    marginBottom: 20,
+    textAlign: 'center'    
   },
   description: {
-    marginTop: 20
+    flex: 1,
+    flexDirection: 'column',
+    padding: 15
   },
   icons: {
     paddingTop: 15,

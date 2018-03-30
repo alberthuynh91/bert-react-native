@@ -8,32 +8,53 @@ export default class SpecItem extends Component {
         <View
         style={styles.container}
         >
-          <Text style={styles.field}>
-            {field}: 
-          </Text>
-          <Text style={styles.value}>
-            {value}
-          </Text>
-          <View
-            style={{
-              borderBottomColor: 'black',
-              borderBottomWidth: 1,
-            }}
-          />
+          <View style={styles.specItemContainer}>
+            <Text style={styles.field}>
+              {field} 
+            </Text>
+            <Text style={styles.value}>
+              {value}
+            </Text>
+          </View>
+          
+          <View style={styles.hrContainer}>
+            <View style={styles.horizonalRule}/>
+          </View>
         </View>
+        
     )
   }
 }
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1
+  },
+  specItemContainer: {
     flex: 1,
-    flexDirection: 'row'
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    padding: 5
   },
   field: {
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    fontSize: 16,
+    paddingLeft: 15
   },
   value: {
-    color: 'black'
+    color: 'black',
+    fontSize: 16,
+    paddingRight: 15
+  },
+  horizonalRule: {
+    borderBottomColor: 'gray',
+    borderBottomWidth: 1,
+    width: '90%',
+  },
+  hrContainer: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 });
