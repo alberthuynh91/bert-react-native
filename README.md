@@ -1,4 +1,5 @@
-### HOW TO DEMO
+# HOW TO DEMO
+======
 
 Make sure you are running node version 8.0.0 or higher. Check your node version by running `node -v`. You can use `nvm` to install and manage node versions.
 
