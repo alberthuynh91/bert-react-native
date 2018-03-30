@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 
+const regularCaseString = (str) => {
+ return str.replace(/([A-Z])/g, ' $1').replace(/^./, function(str){ return str.toUpperCase(); })
+} 
+
 export default class SpecItem extends Component {
   render() {
     const { field, value } = this.props
@@ -10,7 +14,7 @@ export default class SpecItem extends Component {
         >
           <View style={styles.specItemContainer}>
             <Text style={styles.field}>
-              {field} 
+              {regularCaseString(field)} 
             </Text>
             <Text style={styles.value}>
               {value}

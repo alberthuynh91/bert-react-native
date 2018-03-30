@@ -25,7 +25,7 @@ const wheelData = {
   manufacturer: 'Work',
   model: 'Equip 05',
   boltPattern: '5x144.3',
-  multipiece: 'Three-Piece'
+  multpiece: 'Three-Piece'
 }
 
 export default class App extends React.Component {
