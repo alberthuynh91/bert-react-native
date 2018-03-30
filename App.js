@@ -18,14 +18,17 @@ const images = [
 
 let data = {
   title: 'Work Equip 18x9.5 +20 18x10.5 +20',
-  description: 'Brand/Model: Work Equip -Bolt Pattern: 5x114.3 -Front: 18x9.5+20 -Rear: 18x10.5+20 -Face: Chrome (original from work) -Price: $2600 NO TRADE NO TRADE -Contact: 626 551 132 ZERO **Gold hardware available for additional cost** **Want a different lug pattern? can also redrill these** See original listing here: http://zilvia.net/f/showthread.php?t=647958'
+  description: 'Selling a set of used Work Equip 05 wheels in good condition. Lightly driven on for 10k miles. No bends or cracks on the barrels. Would rate the wheels 9/10 condition. Great offsets for a variety of cars. Not looking for trades. CASH ONLY. Can meet anywhere in the Bay Area, CA.',
+  price: '$3000'  
 }
 
 const wheelData = {
   manufacturer: 'Work',
   model: 'Equip 05',
   boltPattern: '5x144.3',
-  multpiece: 'Three-Piece'
+  multpiece: 'Three-Piece',
+  frontSpecs: '18x9 +15',
+  rearSpecs: '18x10 +0',
 }
 
 export default class App extends React.Component {
