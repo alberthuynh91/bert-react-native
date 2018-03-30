@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Carousel from './Components/Carousel'
+import WheelSpecs from './Components/WheelSpecs'
 
 const images = [
   {
@@ -20,6 +21,13 @@ let data = {
   description: 'Brand/Model: Work Equip -Bolt Pattern: 5x114.3 -Front: 18x9.5+20 -Rear: 18x10.5+20 -Face: Chrome (original from work) -Price: $2600 NO TRADE NO TRADE -Contact: 626 551 132 ZERO **Gold hardware available for additional cost** **Want a different lug pattern? can also redrill these** See original listing here: http://zilvia.net/f/showthread.php?t=647958'
 }
 
+const wheelData = {
+  manufacturer: 'Work',
+  model: 'Equip 05',
+  boltPattern: '5x144.3',
+  multipiece: 'Three-Piece'
+}
+
 export default class App extends React.Component {
 
   onPress = () => {
@@ -30,9 +38,6 @@ export default class App extends React.Component {
 
   render() {
     
-
-    
-
     return (
       <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.contentContainer}>
@@ -53,6 +58,10 @@ export default class App extends React.Component {
           <TouchableOpacity onPress={this.onPress}>
             <Icon name="favorite" size={30} color="black" style={styles.icons}/>
           </TouchableOpacity>
+        </View>
+
+        <View>
+          <WheelSpecs data={wheelData} />
         </View>
 
         <Text style={styles.title}>

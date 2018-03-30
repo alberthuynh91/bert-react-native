@@ -17,15 +17,15 @@ export default class Carousel extends Component {
             pagingEnabled
             showsHorizontalScrollIndicator={false}
         >
-            {images.map(image => (
-            <Image style={styles.image} source={image} />
-            ))}
+            {images.map((image, i) => {
+              return <Image key={i} style={styles.image} source={image} />
+            })}
         </ScrollView>
         </View>
-    );
+    )
     }
-    console.log('Please provide images');
-    return null;    
+    console.log('No images were provided.')
+    return null
   }
 }
 
