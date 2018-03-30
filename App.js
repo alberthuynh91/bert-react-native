@@ -1,8 +1,9 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Carousel from './Components/Carousel'
 import WheelSpecs from './Components/WheelSpecs'
+import Button from 'react-native-button';
 
 const images = [
   {
@@ -37,6 +38,10 @@ export default class App extends React.Component {
     this.setState({
       count: this.state.count+1
     })
+  }
+
+  addComment = () => {
+    // add a comment
   }
 
   render() {
@@ -76,6 +81,16 @@ export default class App extends React.Component {
           <Text>{data.description}</Text>
         </View>
 
+        <View style={styles.commentButtonContainer}> 
+          <Button
+            onPress={this.addComment}
+            color="#841584"
+            style={{ fontSize: 20, color: 'black' }}
+            containerStyle={styles.commentButton}
+          >
+            Add Comment
+          </Button>
+        </View>
       </ScrollView>
         
       </View>
@@ -112,5 +127,21 @@ const styles = StyleSheet.create({
     paddingTop: 15,
     paddingBottom: 15,
     paddingLeft: 23,
+  },
+  commentButton: {
+    padding: 10,
+    height: 45,
+    overflow: 'hidden',
+    backgroundColor: 'white',
+    borderRadius: 1,
+    borderWidth: 0.8,
+    borderColor: 'black',
+    width: '94%'
+  },
+  commentButtonContainer: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 });
